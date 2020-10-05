@@ -2,6 +2,8 @@
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
+  annotations:
+    reloader.stakater.com/search: "true"
   name: {{ include "fluent-bit.fullname" . }}
   labels:
     {{- include "fluent-bit.labels" . | nindent 4 }}
